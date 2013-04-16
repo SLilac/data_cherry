@@ -61,7 +61,7 @@ int azm_graph_ins_vertex(azm_graph_t *graph, const void *data)
         return -1;
     azm_set_init(&adjlist->adjacent, graph->destroy, graph->cmp);
     adjlist->vertex = (void *)data;
-    if(azm_list_ins_next(&graph->adjlists,  azm_list_tail(&graph->adjlists), adjlist) == -1){
+    if(azm_list_ins_next(graph->adjlists,  azm_list_tail(&graph->adjlists), adjlist) == -1){
         return -1;
     }
     graph->vcount++;
